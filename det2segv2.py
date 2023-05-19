@@ -24,9 +24,9 @@ class JsonEncoder(json.JSONEncoder):
 
 class det2seg():
     def __init__(self, 
-                 coco_json_path = "F:/salt/doortrim/annotations.json",
-                  dataset_path = "F:/salt/doortrim",
-                 sam_checkpoint = "F:/salt/sam_vit_b_01ec64.pth",
+                 coco_json_path,
+                  dataset_path ,
+                 sam_checkpoint "sam_vit_b_01ec64.pth",
                  model_type = "vit_b",
                  device = "cuda",
                  RLEmode = True
@@ -102,12 +102,11 @@ class det2seg():
             json.dump(self.coco.dataset, f,ensure_ascii=False, cls=JsonEncoder)
 
 if __name__ == "__main__":
-    sam_checkpoint = "/home/fangzhenghao/workspace/sam_vit_h_4b8939.pth"
+    sam_checkpoint = "sam_vit_h_4b8939.pth"
     model_type = "vit_h"
     device = "cuda"
-    coco_json_path = "/home/wangrui/ceramicTile/high_precision/cis/json/20230417/val.json"
-    dataset_path = "/home/wangrui/wr-data/ceramicTile/cropTile_pic/20230417"
-    #dataset_path = "/home/wangrui/wr-data/ceramicTile/cropTile_ccd/20230508"
+    coco_json_path = "val.json"
+    dataset_path = "ceramicTile"
     det2seg = det2seg(coco_json_path=coco_json_path,dataset_path=dataset_path,sam_checkpoint=sam_checkpoint,model_type=model_type,device=device)
     det2seg.transfer()
     det2seg.save()
