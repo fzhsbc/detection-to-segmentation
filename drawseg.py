@@ -79,4 +79,4 @@ def visualize_segmentation(json_path,dataset_dir="dootrim", save_dir="results"):
         except:
             continue
 if __name__ == "__main__":
-    visualize_segmentation('new_annotations.json', dataset_dir="/home/wangrui/wr-data/ceramicTile/cropTile_ccd/20230508", save_dir="results")
+    visualize_segmentation('new_annotations.json', dataset_dir="images", save_dir="results")
